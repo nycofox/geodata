@@ -1,0 +1,128 @@
+[
+    {
+        "name": "Oslo",
+        "name_original": "Oslo",
+        "country": "NO",
+        "lat": 59.9127,
+        "lon": 10.7461,
+        "timezone": "Europe/Oslo",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Oslo"
+    },
+    {
+        "name": "Omsk",
+        "name_original": "Омск",
+        "country": "RU",
+        "lat": 54.9924,
+        "lon": 73.3686,
+        "timezone": "Asia/Omsk",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Omsk"
+    },
+    {
+        "name": "Gothenburg",
+        "name_original": "Göteborg",
+        "country": "SE",
+        "lat": 57.7072,
+        "lon": 11.9668,
+        "timezone": "Europe/Stockholm",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Gothenburg"
+    },
+    {
+        "name": "Tallinn",
+        "name_original": "Tallinn",
+        "country": "EE",
+        "lat": 59.437,
+        "lon": 24.7536,
+        "timezone": "Europe/Tallinn",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Tallinn"
+    },
+    {
+        "name": "Moscow",
+        "name_original": "Москва",
+        "country": "RU",
+        "lat": 55.7558,
+        "lon": 37.6176,
+        "timezone": "Europe/Moscow",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Moscow"
+    },
+    {
+        "name": "Stockholm",
+        "name_original": "Stockholm",
+        "country": "SE",
+        "lat": 59.3294,
+        "lon": 18.0686,
+        "timezone": "Europe/Stockholm",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Stockholm"
+    },
+    {
+        "name": "Helsinki",
+        "name_original": "Helsinki",
+        "country": "FI",
+        "lat": 60.1699,
+        "lon": 24.9384,
+        "timezone": "Europe/Helsinki",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Helsinki"
+    },
+    {
+        "name": "Saint Petersburg",
+        "name_original": "Санкт-Петербург",
+        "country": "RU",
+        "lat": 59.9386,
+        "lon": 30.3141,
+        "timezone": "Europe/Moscow",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Saint_Petersburg"
+    },
+    {
+        "name": "Arendal",
+        "name_original": "Arendal",
+        "country": "NO",
+        "lat": 58.461,
+        "lon": 8.766,
+        "timezone": "Europe/Oslo",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Arendal",
+    },
+    {
+        "name": "Beijing",
+        "name_original": "北京",
+        "country": "CN",
+        "lat": 39.9075,
+        "lon": 116.3972,
+        "timezone": "Asia/Shanghai",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Beijing"
+    },
+    {
+        "name": "Borås",
+        "name_original": "Borås",
+        "country": "SE",
+        "lat": 57.721,
+        "lon": 12.939,
+        "timezone": "Europe/Stockholm",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Borås"
+    },
+    {
+        "name": "Drøbak",
+        "name_original": "Drøbak",
+        "country": "NO",
+        "lat": 59.667,
+        "lon": 10.633,
+        "timezone": "Europe/Oslo",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Drøbak"
+    },
+    {
+        "name": "Tønsberg",
+        "name_original": "Tønsberg",
+        "country": "NO",
+        "lat": 59.267,
+        "lon": 10.417,
+        "timezone": "Europe/Oslo",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Tønsberg"
+    },
+    {
+        "name": "Drammen",
+        "name_original": "Drammen",
+        "country": "NO",
+        "lat": 59.742,
+        "lon": 10.204,
+        "timezone": "Europe/Oslo",
+        "wikipedia_url": "https://en.wikipedia.org/wiki/Drammen"
+    }
+]
