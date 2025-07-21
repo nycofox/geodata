@@ -83,21 +83,23 @@ class UpsertCountries extends Command
         // Combine the two responses into a single array
         $countries = $response1->json();
 
-        foreach ($countries as $country) {
+        foreach ($countries as &$country) {
             $cca3 = $country['cca3'] ?? null;
             if ($cca3) {
-                $extraData = collect($response2->json())->firstWhere('cca3', $cca3);
+                $extraData = collect($response2->json())
+                    ->firstWhere('cca3', $cca3);
+
                 if ($extraData) {
-                    // Merge extra data into the country array
                     $country = array_merge($country, [
-                        'timezones' => $extraData['timezones'] ?? [],
-                        'demonyms' => $extraData['demonyms'] ?? [],
-                        'languages' => $extraData['languages'] ?? [],
+                        'timezones'  => $extraData['timezones']  ?? [],
+                        'demonyms'   => $extraData['demonyms']   ?? [],
+                        'languages'  => $extraData['languages']  ?? [],
                         'currencies' => $extraData['currencies'] ?? [],
                     ]);
                 }
             }
         }
+        unset($country); // break the reference
 
         return $countries;
 

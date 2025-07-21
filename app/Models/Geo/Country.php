@@ -19,6 +19,20 @@ class Country extends Model
         'rest_countries_updated_at',
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'languages' => 'array',
+            'translations' => 'array',
+            'currencies' => 'array',
+            'demonyms' => 'array',
+
+            'geonames_updated_at' => 'datetime',
+            'rest_countries_updated_at' => 'datetime',
+            'version' => 'integer',
+        ];
+    }
+
     public function cities(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(City::class);

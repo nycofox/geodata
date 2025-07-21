@@ -7,12 +7,44 @@ use Illuminate\Http\Request;
 
 class CountryController extends Controller
 {
-    public function index(): \Illuminate\Http\JsonResponse
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        // Fetch all countries with their cities
-        $countries = \App\Models\Geo\Country::orderBy('cca3')->get();
+//        return \App\Models\Geo\Country::orderBy('cca3')->get();
+        return \App\Models\Geo\Country::all();
+    }
 
-        // Return the countries as a JSON response
-        return response()->json($countries);
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
     }
 }

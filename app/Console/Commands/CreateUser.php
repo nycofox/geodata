@@ -41,8 +41,11 @@ class CreateUser extends Command
             'password' => bcrypt($password), // Hash the password
         ]);
 
+        $token = $user->createToken('API Token');
+
+
         $this->info('User created successfully: ' . $user->name);
-        $this->info('API key: ' . $user->api_token);
+        $this->info('API key: ' . $token->plainTextToken);
 
         return 0; // Return zero to indicate success
     }
