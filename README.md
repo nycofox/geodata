@@ -34,7 +34,7 @@ A Laravel-based REST API that provides comprehensive geographic data including c
 - **Admin Panel**: Filament 4.0
 - **Authentication**: Laravel Sanctum
 - **Database**: SQLite (development) / PostgreSQL (production)
-- **Frontend**: Vite + Tailwind CSS 4.0
+- **Frontend**: Vite + Tailwind CSS 4.0 (beta)
 - **Container**: Laravel Sail / Docker
 
 ## Requirements
