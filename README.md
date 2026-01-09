@@ -129,32 +129,108 @@ Authorization: Bearer YOUR_API_TOKEN
 
 #### Available Endpoints
 
-**Get All Countries**
+**List All Countries**
 ```bash
 GET /api/countries
 Authorization: Bearer YOUR_API_TOKEN
 ```
 
+Query Parameters:
+- `search` - Search by name (common/official), code (CCA2/CCA3), region, or subregion
+- `region` - Filter by region (e.g., Europe, Asia, Africa, Americas, Oceania)
+- `subregion` - Filter by subregion (e.g., Southern Europe, Western Asia)
+- `sort_by` - Sort by field (name_common, name_official, cca2, cca3, region, subregion, population, area_km2)
+- `sort_order` - Sort direction (asc, desc)
+- `per_page` - Results per page (1-100, default: 15)
+
+Examples:
+```bash
+# Search for countries
+GET /api/countries?search=Spain
+
+# Filter by region
+GET /api/countries?region=Europe
+
+# Filter by subregion
+GET /api/countries?subregion=Southern+Europe
+
+# Sort by population descending
+GET /api/countries?sort_by=population&sort_order=desc
+
+# Combine filters
+GET /api/countries?region=Europe&sort_by=name_common&per_page=20
+
+# Search and filter
+GET /api/countries?search=kingdom&region=Europe&sort_by=name_common
+```
+
 Response:
 ```json
-[
-  {
-    "id": 1,
-    "cca2": "ES",
-    "cca3": "ESP",
-    "name_common": "Spain",
-    "name_official": "Kingdom of Spain",
-    "region": "Europe",
-    "subregion": "Southern Europe",
-    "population": 47351567,
-    "area_km2": 505992.0,
-    "latitude": 40.0,
-    "longitude": -4.0,
-    "languages": {...},
-    "currencies": {...},
-    ...
+{
+  "data": [
+    {
+      "id": 1,
+      "cca2": "ES",
+      "cca3": "ESP",
+      "name_common": "Spain",
+      "name_official": "Kingdom of Spain",
+      "region": "Europe",
+      "subregion": "Southern Europe",
+      "population": 47351567,
+      "area_km2": 505992.0,
+      "latitude": 40.0,
+      "longitude": -4.0,
+      "languages": {...},
+      "currencies": {...},
+      ...
+    }
+  ],
+  "links": {
+    "first": "http://localhost/api/countries?page=1",
+    "last": "http://localhost/api/countries?page=10",
+    "prev": null,
+    "next": "http://localhost/api/countries?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 10,
+    "per_page": 15,
+    "to": 15,
+    "total": 150
   }
-]
+}
+```
+
+**Get Single Country**
+```bash
+# By ID
+GET /api/countries/1
+# By CCA2 code
+GET /api/countries/ES
+# By CCA3 code
+GET /api/countries/ESP
+Authorization: Bearer YOUR_API_TOKEN
+```
+
+Response:
+```json
+{
+  "id": 1,
+  "cca2": "ES",
+  "cca3": "ESP",
+  "name_common": "Spain",
+  "name_official": "Kingdom of Spain",
+  "region": "Europe",
+  "subregion": "Southern Europe",
+  "population": 47351567,
+  "area_km2": 505992.0,
+  "latitude": 40.0,
+  "longitude": -4.0,
+  "languages": {...},
+  "currencies": {...},
+  ...
+}
 ```
 
 **Get Authenticated User**
