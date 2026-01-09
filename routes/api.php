@@ -10,3 +10,7 @@ Route::get('/user', function (Request $request) {
 Route::get('/countries', [\App\Http\Controllers\Api\CountryController::class, 'index'])
     ->middleware('auth:sanctum')
     ->name('api.countries.index');
+
+Route::get('/countries/{id}', [\App\Http\Controllers\Api\CountryController::class, 'show'])
+    ->middleware('auth:sanctum')
+    ->name('api.countries.show');
