@@ -58,7 +58,7 @@ class CountryFactory extends Factory
             'demonyms' => json_encode([]),
             'calling_codes' => json_encode([]),
             'timezones' => json_encode([]),
-            'flag_emoji' => $this->faker->emoji(),
+            'flag_emoji' => '🏴',
             'flag_svg_url' => $this->faker->imageUrl(),
             'geonames_id' => (string) $this->faker->numberBetween(1000000, 9999999),
             'version' => 1,

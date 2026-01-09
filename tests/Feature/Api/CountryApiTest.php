@@ -160,9 +160,9 @@ class CountryApiTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(10, 'data');
 
-        // Verify there are more pages
+        // Verify there are more pages - Laravel paginate returns total in the response
         $json = $response->json();
-        $this->assertGreaterThan(10, $json['total'] ?? $json['meta']['total'] ?? 0);
+        $this->assertGreaterThan(10, $json['total']);
     }
 
     public function test_pagination_respects_max_per_page(): void
@@ -237,10 +237,11 @@ class CountryApiTest extends TestCase
 
     public function test_requires_authentication_for_countries_list(): void
     {
-        // Remove authentication
+        // Logout by creating a new test instance without authentication
         $this->app['auth']->forgetGuards();
+        $this->refreshApplication();
 
-        $response = $this->getJson('/api/countries');
+        $response = $this->json('GET', '/api/countries');
 
         $response->assertStatus(401);
     }
@@ -249,10 +250,11 @@ class CountryApiTest extends TestCase
     {
         $country = Country::factory()->create();
 
-        // Remove authentication
+        // Logout by creating a new test instance without authentication
         $this->app['auth']->forgetGuards();
+        $this->refreshApplication();
 
-        $response = $this->getJson("/api/countries/{$country->id}");
+        $response = $this->json('GET', "/api/countries/{$country->id}");
 
         $response->assertStatus(401);
     }

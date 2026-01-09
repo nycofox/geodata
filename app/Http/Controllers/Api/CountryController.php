@@ -59,11 +59,20 @@ class CountryController extends Controller
      */
     public function show(string $id)
     {
-        // Try to find by ID first, then by cca2, then by cca3
-        $country = Country::where('id', $id)
-            ->orWhere('cca2', strtoupper($id))
-            ->orWhere('cca3', strtoupper($id))
-            ->first();
+        // Try to find by ID first (numeric), then by cca2, then by cca3
+        $country = null;
+
+        // If the ID is numeric, try to find by primary key first
+        if (is_numeric($id)) {
+            $country = Country::find($id);
+        }
+
+        // If not found, try by cca2 or cca3 codes
+        if (! $country) {
+            $country = Country::where('cca2', strtoupper($id))
+                ->orWhere('cca3', strtoupper($id))
+                ->first();
+        }
 
         if (! $country) {
             return response()->json([
