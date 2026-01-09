@@ -3,17 +3,16 @@
 ## High Priority
 
 ### API Development
-- [ ] Complete REST API endpoints for Countries
-  - [ ] Implement `show()` method for single country retrieval
-  - [ ] Add filtering and sorting capabilities to `index()` endpoint
-  - [ ] Implement pagination for country listing
-  - [ ] Add search functionality (by name, code, region)
+- [x] Complete REST API endpoints for Countries
+  - [x] Implement `show()` method for single country retrieval
+  - [x] Add filtering and sorting capabilities to `index()` endpoint
+  - [x] Implement pagination for country listing
+  - [x] Add search functionality (by name, code, region)
 - [ ] Create REST API endpoints for Cities
   - [ ] Index endpoint (list all cities with filtering)
   - [ ] Show endpoint (single city details)
   - [ ] Add relationship loading (country data)
 - [ ] Add API versioning (e.g., `/api/v1/countries`)
-- [ ] Remove commented code from CountryController
 
 ### Authentication & Security
 - [ ] Review and improve API authentication strategy
@@ -26,8 +25,8 @@
 - [ ] Create unit tests for models
   - [ ] Country model tests (versioning, relationships)
   - [ ] City model tests (soft deletes, relationships)
-- [ ] Create feature tests for API endpoints
-  - [ ] Country API tests (index, show)
+- [x] Create feature tests for API endpoints
+  - [x] Country API tests (index, show, filtering, sorting, pagination, search)
   - [ ] City API tests
   - [ ] Authentication tests
 - [ ] Add integration tests for data import commands
