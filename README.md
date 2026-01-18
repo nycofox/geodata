@@ -30,7 +30,7 @@ A Laravel-based REST API that provides comprehensive geographic data including c
 ## Technology Stack
 
 - **Framework**: Laravel 12
-- **PHP Version**: 8.2+
+- **PHP Version**: 8.4+
 - **Admin Panel**: Filament 4.0
 - **Authentication**: Laravel Sanctum
 - **Database**: SQLite (development) / PostgreSQL (production)
